@@ -354,7 +354,6 @@ meta:
 		author = "MageMojo"
     strings:
         $ = "1337day.com"
-        $ = "altervista.org"
         $ = "antichat.ru"
         $ = "ccteam.ru"
         $ = "crackfor" nocase
@@ -1892,7 +1891,6 @@ $4="$subject = $pay->getCcNumber().\" From \".$_SERVER['HTTP_HOST'].\"|\".$setBi
 $5="private function _storeInfos("
 $6="mail($encode, $salt, $payfull, $headr);"
 $7="From: Logger CC Magento"
-$8="http://www.binlist.net/json/"
 $10="fwrite($write,$invoice"
 $11="http://www.telize.com/geoip/\".$ipboss"
 $12="$idkey  = \"base\".\"64\".\"_\".\"de\".\"code\";"
@@ -1956,7 +1954,7 @@ any of them
 rule md5_64651cede2467fdeb1b3b7e6ff3f81cb
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "rUl6QttVEP5eqf9usxfJjgoOvdNWFSGoHDgluk+4ONwXQNbGniQLttfyrgkB8d9"
     condition: any of them
 
@@ -1964,7 +1962,7 @@ meta:
 rule fopo_webshell
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: 
         $ = "DNEcHdQbWtXU3dSMDA1VmZ1c29WUVFXdUhPT0xYb0k3ZDJyWmFVZlF5Y0ZEeHV4K2FnVmY0OUtjbzhnc0"
         $ = "U3hkTVVibSt2MTgyRjY0VmZlQWo3d1VlaFJVNVNnSGZUVUhKZXdEbGxJUTlXWWlqWSt0cEtacUZOSXF4c"
@@ -1975,7 +1973,7 @@ meta:
 rule eval_post
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings:
         $ = "eval(base64_decode($_POST"
         $ = "eval($undecode($tongji))"
@@ -1986,7 +1984,7 @@ meta:
 rule spam_mailer
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings:
         $ = "<strong>WwW.Zone-Org</strong>"
         $ = "echo eval(urldecode("
@@ -1996,14 +1994,14 @@ meta:
 rule md5_0105d05660329704bdb0ecd3fd3a473b
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     /*
 
 }
 rule md5_0b1bfb0bdc7e017baccd05c6af6943ea
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
 	/*
 		eval(hnsqqh($llmkuhieq, $dbnlftqgr));?>
 		eval(vW91692($v7U7N9K, $v5N9NGE));?>
@@ -2015,7 +2013,7 @@ meta:
 rule md5_2495b460f28f45b40d92da406be15627
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "$dez = $pwddir.\"/\".$real;copy($uploaded, $dez);"
     condition: any of them
 
@@ -2023,7 +2021,7 @@ meta:
 rule md5_3ccdd51fe616c08daafd601589182d38
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "eval(xxtea_decrypt"
     condition: any of them
 
@@ -2031,7 +2029,7 @@ meta:
 rule md5_4b69af81b89ba444204680d506a8e0a1
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "** Scam Redirector"
     condition: any of them
 
@@ -2039,14 +2037,14 @@ meta:
 rule md5_87cf8209494eedd936b28ff620e28780
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "curl_close($cu);eval($o);};die();"
 condition: any of them
 }
 rule md5_c647e85ad77fd9971ba709a08566935d
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "fopen(\"cache.php\", \"w+\")"
     condition: any of them
 
@@ -2054,7 +2052,7 @@ meta:
 rule md5_fb9e35bf367a106d18eb6aa0fe406437
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "0B6KVua7D2SLCNDN2RW1ORmhZRWs/sp_tilang.js"
     condition: any of them
 
@@ -2062,14 +2060,14 @@ meta:
 rule md5_8e5f7f6523891a5dcefcbb1a79e5bbe9
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
 strings: $ = "if(@copy($_FILES['file']['tmp_name'],$_FILES['file']['name'])) {echo '<b>up!!!</b><br><br>';}}"
 condition: any of them
 }
 rule indoexploit_autoexploiter
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "echo \"IndoXploit - Auto Xploiter\""
     condition: any of them
 
@@ -2077,7 +2075,7 @@ meta:
 rule eval_base64_decode_a
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "eval(base64_decode($a));"
     condition: any of them
 
@@ -2085,7 +2083,7 @@ meta:
 rule md5_ab63230ee24a988a4a9245c2456e4874
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "eval(gzinflate(base64_decode(str_rot13(strrev("
     condition: any of them
 
@@ -2093,14 +2091,14 @@ meta:
 rule md5_b579bff90970ec58862ea8c26014d643
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
 strings: $ = /<Files [^>]+.(jpg|png|gif)>\s*ForceType application\/x-httpd-php/
 condition: any of them
 }
 rule md5_d30b23d1224438518d18e90c218d7c8b
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "attribute_code=0x70617373776f72645f68617368"
     condition: any of them
 
@@ -2108,21 +2106,21 @@ meta:
 rule base64_hidden_in_image
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = /JPEG-1\.1[a-zA-Z0-9\-\/]{32}/
 condition: any of them
 }
 rule hide_data_in_jpeg
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = /file_put_contents\(\$.{2,3},'JPEG-1\.1'\.base64_encode/
 condition: any of them
 }
 rule hidden_file_upload_in_503
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = /error_reporting(0);$f=$_FILES[w+];copy($f[tmp_name],$f[name]);error_reporting(E_ALL);/
     condition: any of them
 
@@ -2130,21 +2128,21 @@ meta:
 rule md5_fd141197c89d27b30821f3de8627ac38
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     condition: any of them
 
 }
 rule md5_39ca2651740c2cef91eb82161575348b
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = /if\(md5\(@\$_COOKIE\[..\]\)=='.{32}'\) \(\$_=@\$_REQUEST\[.\]\).@\$_\(\$_REQUEST\[.\]\);/
 condition: any of them
 }
 rule md5_6eb201737a6ef3c4880ae0b8983398a9
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings:
         $ = "if(md5(@$_COOKIE[qz])=="
         $ = "($_=@$_REQUEST[q]).@$_($_REQUEST[z]);"
@@ -2154,7 +2152,7 @@ meta:
 rule md5_d201d61510f7889f1a47257d52b15fa2
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "@eval(stripslashes($_REQUEST[q]));"
     condition: any of them
 
@@ -2162,7 +2160,7 @@ meta:
 rule onepage_or_checkout
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "\x6F\x6E\x65\x70\x61\x67\x65\x7C\x63\x68\x65\x63\x6B\x6F\x75\x74"
     condition: any of them
 
@@ -2170,7 +2168,7 @@ meta:
 rule sinlesspleasure_com
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "5e908r948q9e605j8t9b915n5o9f8r5e5d969g9d795b4s6p8t9h9f978o8p8s9590936l6k8j9670524p7490915l5f8r90878t917f7g8p8o8p8k9c605i8d937t7m8i8q8o8q959h7p828e7r8e7q7e8m8o5g5e9199918o9g7q7c8c8t99905a5i8l94989h7r7g8i8t8m5f5o92917q7k9i9e948c919h925a5d8j915h608t8p8t9f937b7k9i9e948c919h92"
     condition: any of them
 
@@ -2178,7 +2176,7 @@ meta:
 rule amasty_biz
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "118,97,114,32,115,110,100,32,61,110,117,108,108,59,10,10,102,117"
     condition: any of them
 
@@ -2186,7 +2184,7 @@ meta:
 rule amasty_biz_js
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "t_p#0.qlb#0.#1Blsjj#1@#.?#.?dslargml#0.qr_pr#06#07#5@#.?#0"
     condition: any of them
 
@@ -2194,7 +2192,7 @@ meta:
 rule returntosender
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "\x2F\x6D\x65\x64\x69\x61\x2F\x63\x61\x74\x61\x6C\x6F\x67\x2F\x70\x72\x6F\x64\x75\x63\x74\x2F\x63\x61\x63\x68\x65\x2F\x31\x2F\x74\x68\x75\x6D\x62\x6E\x61\x69\x6C\x2F\x37\x30\x30\x78\x2F\x32\x62\x66\x38\x66\x32\x62\x38\x64\x30\x32\x38\x63\x63\x65\x39\x36\x2F\x42\x2F\x57\x2F\x64\x61\x34\x31\x38\x30\x33\x63\x63\x39\x38\x34\x62\x38\x63\x2E\x70\x68\x70"
     condition: any of them
 
@@ -2202,7 +2200,7 @@ meta:
 rule ip_5uu8_com
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "\x69\x70\x2e\x35\x75\x75\x38\x2e\x63\x6f\x6d"
     condition: any of them
 
@@ -2210,7 +2208,7 @@ meta:
 rule cloudfusion_me
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "&#99;&#108;&#111;&#117;&#100;&#102;&#117;&#115;&#105;&#111;&#110;&#46;&#109;&#101;"
     condition: any of them
 
@@ -2218,7 +2216,7 @@ meta:
 rule grelos_v
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "var grelos_v"
     condition: any of them
 
@@ -2226,7 +2224,7 @@ meta:
 rule hacked_domains
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: 
         $ = "infopromo.biz"
         $ = "jquery-code.su"
@@ -2240,7 +2238,7 @@ meta:
 rule mage_cdn_link
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "\x6D\x61\x67\x65\x2D\x63\x64\x6E\x2E\x6C\x69\x6E\x6B"
     condition: any of them
 
@@ -2248,14 +2246,14 @@ meta:
 rule credit_card_regex
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "RegExp(\"[0-9]{13,16}\")"
 condition: any of them
 }
 rule jquery_code_su
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "105,102,40,40,110,101,119,32,82,101,103,69,120,112,40,39,111,110,101,112,97,103,101"
     condition: any of them
 
@@ -2263,7 +2261,7 @@ meta:
 rule jquery_code_su_multi
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "=oQKpkyJ8dCK0lGbwNnLn42bpRXYj9GbENDft12bkBjM8V2Ypx2c8Rnbl52bw12bDlkUVVGZvNWZkZ0M85WavpGfsJXd8R1UPB1NywXZtFmb0N3box"
     condition: any of them
 
@@ -2271,7 +2269,7 @@ meta:
 rule gate_php_js
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: 
 		$ = "/gate.php?token="
 		$ = "payment[cc_cid]"
@@ -2281,7 +2279,7 @@ meta:
 rule googieplay_js
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "tdsjqu!tsd>#iuuq;00hpphjfqmbz/jogp0nbhfoup`hpphjfqmbz/kt#?=0tdsjqu?"
     condition: any of them
 
@@ -2289,7 +2287,7 @@ meta:
 rule mag_php_js
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "onepage|checkout|onestep|firecheckout|onestepcheckout"
     condition: any of them
 
@@ -2297,7 +2295,7 @@ meta:
 rule thetech_org_js
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "|RegExp|onepage|checkout|"
     condition: any of them
 
@@ -2305,7 +2303,7 @@ meta:
 rule md5_cdn_js_link_js
 {
 meta:
-		author = "Byte.nl"
+		author = "Willem de Groot"
     strings: $ = "grelos_v= null"
     condition: any of them
 
@@ -2344,5 +2342,61 @@ meta:
     strings:
         $ = "isset($_POST['_']))@setcookie('_', $_POST['_']);"
     condition: any of them
+
+}
+rule FOPO_obfuscator
+{
+meta:
+		author = "MageMojo"
+    strings:
+        $ = "Obfuscation provided by FOPO - Free Online PHP Obfuscator: http://www.fopo.com.ar/"
+    condition: any of them
+
+}
+rule Mage_jpeg_cc_append
+{
+meta:
+		author = "MageMojo"
+    strings:
+        $ = "@file_put_contents($y0,'JPEG-.1'.base64_encode($a5),FILE_APPEND)"
+    condition: any of them
+
+}
+rule sohai_info_stealer
+{
+meta:
+		author = "MageMojo"
+    strings:
+        $ = "coder : sohai"
+    condition: any of them
+}
+rule adminer_backdoor
+{
+		meta:
+		author = "MageMojo"
+		strings:
+			$1="http://www.vrana.cz/"
+		condition:
+			any of them
+
+}
+rule cc_skimmer_google_jquery
+{
+		meta:
+		author = "MageMojo"
+		strings:
+			$1="$data=json_encode(array('request'=>$_REQUEST, 'ip'=>$_SERVER['REMOTE_ADDR']"
+		condition:
+			any of them
+
+}
+rule phpfilemanager
+{
+		meta:
+		author = "MageMojo"
+		strings:
+			$1="phpFileManager"
+		condition:
+			any of them
 
 }
